@@ -1,0 +1,22 @@
+{
+   "size":0,
+   "aggs" : {
+        "aggs_currency" : {
+            "terms" : {
+              "field" : "currency"
+            }
+        },
+        "shares" : {
+            "nested" : {
+                "path" : "shares"
+            },
+            "aggs" : {
+            	"investorType": {
+	                "terms" : {
+	                	"field" : "shares.investorType"
+	                }
+	            }
+            }
+        }
+    }
+}
