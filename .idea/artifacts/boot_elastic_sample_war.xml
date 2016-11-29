@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="boot-elastic-sample:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="boot-elastic-sample-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="boot-elastic-sample:war exploded" />
+    </root>
+  </artifact>
+</component>
