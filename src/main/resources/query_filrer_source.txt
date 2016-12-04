@@ -1,0 +1,32 @@
+{
+   "size":10,
+   "_source": ["baseName", "shares.name", "shares.isin", "shares.investorType"],
+   "query": {
+    "filtered": {
+      "query": {
+        "match_all": {}
+      }
+   }
+   },
+   "aggs" : {
+        "aggs_currency" : {
+            "terms" : {
+              "field" : "currency"
+            }
+        },
+        "shares" : {
+            "nested" : {
+                "path" : "shares"
+            },
+            "aggs" : {
+            	"investorType": {
+	                "terms" : {
+	                	"field" : "shares.investorType"
+	                }
+	            }
+            }
+        }
+    }
+}
+
+
